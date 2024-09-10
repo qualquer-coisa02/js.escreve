@@ -1,0 +1,58 @@
+let palavra;
+
+function setup() {
+  
+  createCanvas(400, 400);
+  
+  palavra= palavraAleatoria()
+  
+  
+}
+
+function palavraAleatoria(){
+  
+  let palavras= ["não sei", "nunca", "nem fu...", "não"];
+  return random(palavras);
+  //isso aqui faz com que apareça palavras aleatorias na tela
+  
+}
+
+function inicializaCores(){
+  
+  background("white");
+  
+  fill("black");
+  
+  textSize(64);
+  textAlign(CENTER,CENTER);
+  
+  //aqui são as cores, tamanho e posição das palavras
+  
+}
+
+function palavraParcial(minimo, maximo){
+  
+  let quantidade = map(mouseX, minimo, maximo, 1, palavra.length);
+  let parcial = palavra.substring(0, quantidade);
+  return parcial;
+  //isso aqui não sei explicar... é para a palavra ser completada conforme meu mouse passa... não sei explicar melhor que isso '-'
+  
+}
+
+function draw() {
+  
+  inicializaCores ();
+  
+  
+  
+  
+  
+  
+  let texto = palavraParcial(0, width);
+  text(texto, 200, 200)
+
+ 
+    
+  
+   }
+  
